@@ -275,8 +275,8 @@ function hapticNotify(type){try{tg&&tg.HapticFeedback&&tg.HapticFeedback.notific
 /* ---- Backend integration (shared leaderboard, real Telegram auth, Stars payments) ----
    Replace this with your deployed backend URL (see backend/README.md). Until then the
    app keeps working exactly as before, purely offline via localStorage. */
-const API_BASE='https://ВАШ-БЭКЕНД.example.com';
-const ONLINE = !!(tg && tg.initData && API_BASE && !API_BASE.includes('ВАШ-БЭКЕНД'));
+const API_BASE='growyoupencil-backend-production.up.railway.app';
+const ONLINE = !!(tg && tg.initData && API_BASE && !API_BASE.includes('growyoupencil-backend-production.up.railway.app'));
 async function apiPost(path,body){
   try{
     const res=await fetch(API_BASE+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({initData:tg.initData,...(body||{})})});
